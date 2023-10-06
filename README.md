@@ -1,4 +1,4 @@
-# Fee API
+# Hospital Fee API
 
 ## Version
 
