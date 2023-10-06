@@ -1,0 +1,42 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: Fee API
+  description: 
+servers:
+  - url: https://localhost:8080
+paths:
+  /getFee:
+    get:
+      description: get fee
+      parameters:
+        - in: query
+          name: birthday
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: systemDate
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: Successful operation 
+  /getPatient:
+    post:
+      description: get patient info and fee
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                patientId:
+                  type: number
+                systemDate:
+                  type: string
+      responses:
+        "200":
+          description: Successful operation 
