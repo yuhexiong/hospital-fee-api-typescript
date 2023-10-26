@@ -1,8 +1,8 @@
 // routes/api-routes.ts
-import  express, { Router, Request, Response, NextFunction } from 'express';
-import { ApiControllers } from '../controllers/api-controllers';
+import express, { Router } from 'express';
+import { ApiController } from '../controllers/api-controllers';
 
-const apiControllers = new ApiControllers;
+const apiController = new ApiController;
 
 export class ApiRouter {
   router: Router;
@@ -12,7 +12,7 @@ export class ApiRouter {
   }
 
   initializeRoutes() {
-    this.router.get('/getFee', apiControllers.getFeePage);
-    this.router.post('/getPatient', apiControllers.getPatientPage);
+    this.router.get('/getFee', apiController.getFee);
+    this.router.post('/getPatient', apiController.getPatient);
   }
 }

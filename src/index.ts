@@ -10,6 +10,9 @@ import express, { Express } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import YAML from 'yamljs';
 import { ApiRouter } from './routes/api-routes';
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: __dirname+'/.env' });
 
 export async function initDB() {
 

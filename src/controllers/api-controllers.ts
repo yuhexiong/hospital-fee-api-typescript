@@ -21,8 +21,8 @@ async function ageToFee(age: number): Promise<number>{
   return fee.fee;
 }
 
-export class ApiControllers {
-  async getFeePage(request: Request, response: Response, next: NextFunction) {
+export class ApiController {
+  async getFee(request: Request, response: Response, next: NextFunction) {
     const birthday: string | undefined = <string>request.query.birthday;
     const systemDate: string | undefined = <string>request.query.systemDate;
     const age = birthToAge(birthday, systemDate);
@@ -30,7 +30,7 @@ export class ApiControllers {
     response.send({'amount': fee});
   }
 
-  async getPatientPage(request: Request, response: Response, next: NextFunction) {
+  async getPatient(request: Request, response: Response, next: NextFunction) {
     const patientId: number | undefined = request.body?.patientId;
     const systemDate: string | undefined =  request.body?.systemDate;
 
