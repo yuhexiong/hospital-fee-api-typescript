@@ -33,7 +33,6 @@ npm i
 npm start
 
 # run test case
-npm install -g mocha
 npm test
 
 ```
